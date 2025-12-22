@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
+html,
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+
 @keyframes waterFloat {
   0% {
     transform: translateY(0px) rotate(0deg);
   }
   25% {
-    transform: translateY(-6px) rotate(0.4deg);
+    transform: translateY(-18px) rotate(0.8deg);
   }
   50% {
-    transform: translateY(-14px) rotate(0deg);
+    transform: translateY(-40px) rotate(0deg);
   }
   75% {
-    transform: translateY(-6px) rotate(-0.4deg);
+    transform: translateY(-18px) rotate(-0.8deg);
   }
   100% {
     transform: translateY(0px) rotate(0deg);

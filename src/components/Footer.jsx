@@ -4,23 +4,25 @@ function Footer() {
   return (
     <footer className="bg-black/95 text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-10">
-
         {/* TOP CONTENT */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-20 items-start">
-
           {/* LEFT: Brand */}
           <div className="text-center md:text-left">
-            <div className="mx-auto md:mx-0 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center font-semibold tracking-widest mb-5">
-              N
+            <div className="mx-auto md:mx-0 w-14 h-14 rounded-full bg-black text-black text-lg flex items-center justify-center font-semibold tracking-widest mb-5">
+              <img
+                src="/premiumscents.png"
+                alt="Premium Fragrances Logo"
+                className="w-14 h-14 rounded-full object-cover"
+              />
             </div>
 
-            <h3 className="text-2xl font-semibold tracking-widest">
-                Premium Scents
+            <h3 className="text-2xl font-bold tracking-widest">
+              PREMIUM SCENTS
             </h3>
 
             <p className="mt-4 text-sm text-white/60 leading-relaxed max-w-xs mx-auto md:mx-0">
-              A modern expression of timeless fragrance.
-              Crafted with intention, balance, and restraint.
+              A modern expression of timeless fragrance. Crafted with intention,
+              balance, and restraint.
             </p>
           </div>
 
@@ -63,7 +65,6 @@ function Footer() {
               </a>
             </div>
           </div>
-
         </div>
 
         {/* DIVIDER */}
@@ -75,7 +76,6 @@ function Footer() {
         <div className="mt-6 text-center text-xs tracking-widest text-white/40">
           © {new Date().getFullYear()} Perfumes — All rights reserved
         </div>
-
       </div>
     </footer>
   );

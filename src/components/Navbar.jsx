@@ -16,14 +16,17 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-black backdrop-blur-md text-white border-b border-neutral-800">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
-
         {/* LEFT: Logo + Brand */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold text-sm">
-            N
+          <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
+            <img
+              src="/premiumscents.png"
+              alt="Premium Fragrances Logo"
+              className="w-10 h-10 rounded-full object-cover"
+            />
           </div>
-          <span className="text-lg md:text-xl font-semibold tracking-widest">
-            Premium Scents
+          <span className="text-lg md:text-xl font-extrabold tracking-widest">
+            PREMIUM SCENTS
           </span>
         </div>
 

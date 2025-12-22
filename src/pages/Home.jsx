@@ -1,3 +1,5 @@
+import Reveal from "../components/Reveal";
+
 function Home() {
   return (
     <>
@@ -13,10 +15,11 @@ function Home() {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/70"></div>
 
+        <Reveal direction="bottom">
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
           {/* Left */}
           <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-semibold tracking-wide leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-wide leading-tight">
               A Signature <br className="hidden md:block" /> Of Pure Elegance
             </h1>
 
@@ -26,7 +29,7 @@ function Home() {
             </p>
 
             <div className="mt-10">
-              <button className="px-8 py-3 rounded-full bg-white text-black font-medium tracking-wide hover:bg-neutral-200 transition">
+              <button className="px-8 py-3 rounded-full bg-white text-black font-bold tracking-wide hover:bg-neutral-200 transition">
                 Explore Collection
               </button>
             </div>
@@ -41,14 +44,16 @@ function Home() {
             />
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* FEATURED FRAGRANCES SECTION */}
       <section className="bg-black text-white py-24">
+        <Reveal direction="right">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           {/* Section Header */}
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-wide">
               Featured Fragrances
             </h2>
             <p className="mt-4 max-w-xl text-white/70">
@@ -114,12 +119,14 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+        </Reveal>
+      </section>  
 
       {/* BRAND STORY SECTION */}
+      <Reveal direction="left">
       <section className="bg-black text-white py-28">
         <div className="mb-20 text-center px-6">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-wide">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-wide">
             OUR BRAND STORY
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/70">
@@ -171,13 +178,65 @@ function Home() {
           </div>
         </div>
       </section>
+      </Reveal>
+
+      {/* PHILOSOPHY SECTION */}
+      <Reveal direction="bottom">
+      <section className="bg-neutral-950 text-white py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-wide">
+            Crafted With Intention
+          </h2>
+
+          <p className="mt-8 text-white/70 leading-relaxed max-w-2xl mx-auto">
+            Every fragrance we create is a quiet expression of character —
+            designed to linger, evolve, and leave a lasting impression. We
+            believe scent is deeply personal, and craftsmanship is
+            non-negotiable.
+          </p>
+
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+              <h3 className="uppercase tracking-widest text-sm text-white/60">
+                Rare Ingredients
+              </h3>
+              <p className="mt-4 text-white/70 leading-relaxed">
+                Carefully sourced notes blended to achieve balance, depth, and
+                authenticity.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="uppercase tracking-widest text-sm text-white/60">
+                Long-Lasting Essence
+              </h3>
+              <p className="mt-4 text-white/70 leading-relaxed">
+                Designed to stay with you — subtle at first, unforgettable over
+                time.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="uppercase tracking-widest text-sm text-white/60">
+                Modern Identity
+              </h3>
+              <p className="mt-4 text-white/70 leading-relaxed">
+                Minimal, confident, and refined — fragrances that speak without
+                saying too much.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </Reveal>
 
       {/* CONTACT SECTION */}
       <section className="bg-black text-white py-28">
+        <Reveal direction="right">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Text */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-wide">
               Get in Touch
             </h2>
 
@@ -243,13 +302,14 @@ function Home() {
             <div className="pt-6">
               <button
                 type="submit"
-                className="px-8 py-3 rounded-full bg-white text-black font-medium tracking-wide hover:bg-neutral-200 transition"
+                className="px-8 py-3 rounded-full bg-white text-black font-bold tracking-wide hover:bg-neutral-200 transition"
               >
                 Send Message
               </button>
             </div>
           </form>
         </div>
+        </Reveal>
       </section>
     </>
   );
