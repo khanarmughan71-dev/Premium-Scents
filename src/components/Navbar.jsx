@@ -46,9 +46,9 @@ function Navbar() {
 
         {/* RIGHT: Cart + Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <button className="relative border border-neutral-700 px-4 py-2 rounded-full text-sm hover:bg-white hover:text-black transition">
+          <Link to="/Cart" className="relative border border-neutral-700 px-4 py-2 rounded-full text-sm hover:bg-white hover:text-black transition">
             Cart
-          </button>
+          </Link>
 
           {/* Hamburger */}
           <button

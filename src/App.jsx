@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import Home from "./pages/Home";
+import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
@@ -12,7 +13,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1200); // smooth luxury delay
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -30,8 +31,10 @@ function App() {
       >
         <Navbar />
 
+        {/* ROUTES */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
 
         <Footer />
