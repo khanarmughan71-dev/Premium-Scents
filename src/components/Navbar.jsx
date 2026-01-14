@@ -15,18 +15,36 @@ function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-black backdrop-blur-md text-white border-b border-neutral-800">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+      <div className="max-w-8x1 mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
         {/* LEFT: Logo + Brand */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
+        <div className="flex items-center gap-4">
+          {/* Logo Circle */}
+          <div
+            className="
+      w-11 h-11 rounded-full
+      bg-black/90
+      ring-2 ring-white/40
+      overflow-hidden
+      flex items-center justify-center
+      transition-all duration-300 ease-out
+      hover:ring-white/60
+      hover:scale-105
+    "
+          >
             <img
-              src="/premiumscents.png"
-              alt="Premium Fragrances Logo"
-              className="w-10 h-10 rounded-full object-cover"
+              src="/stride-logo.png"
+              alt="Stride Scents Logo"
+              className="
+        w-12 h-12 object-contain
+        transition-transform duration-300 ease-out
+        group-hover:scale-105
+      "
             />
           </div>
+
+          {/* Brand Text */}
           <span className="text-lg md:text-xl font-extrabold tracking-widest">
-            PREMIUM SCENTS
+            STRIDE SCENTS
           </span>
         </div>
 
@@ -46,7 +64,10 @@ function Navbar() {
 
         {/* RIGHT: Cart + Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <Link to="/Cart" className="relative border border-neutral-700 px-4 py-2 rounded-full text-sm hover:bg-white hover:text-black transition">
+          <Link
+            to="/Cart"
+            className="relative border border-neutral-700 px-4 py-2 rounded-full text-sm hover:bg-white hover:text-black transition"
+          >
             Cart
           </Link>
 

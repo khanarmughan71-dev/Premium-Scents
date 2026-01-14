@@ -8,16 +8,33 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-20 items-start">
           {/* LEFT: Brand */}
           <div className="text-center md:text-left">
-            <div className="mx-auto md:mx-0 w-14 h-14 rounded-full bg-black text-black text-lg flex items-center justify-center font-semibold tracking-widest mb-5">
-              <img
-                src="/premiumscents.png"
-                alt="Premium Fragrances Logo"
-                className="w-14 h-14 rounded-full object-cover"
-              />
+            <div className="mx-auto md:mx-0 w-16 h-16 rounded-full bg-black text-black text-lg flex items-center justify-center font-semibold tracking-widest mb-5">
+              <div
+                className="
+      w-15 h-15 rounded-full
+      bg-black/90
+      ring-2 ring-white/40
+      overflow-hidden
+      flex items-center justify-center
+      transition-all duration-300 ease-out
+      hover:ring-white/60
+      hover:scale-105
+    "
+              >
+                <img
+                  src="/stride-logo.png"
+                  alt="Stride Scents Logo"
+                  className="
+        w-16 h-16 object-contain
+        transition-transform duration-300 ease-out
+        group-hover:scale-105
+      "
+                />
+              </div>
             </div>
 
             <h3 className="text-2xl font-bold tracking-widest">
-              PREMIUM SCENTS
+              STRIDE SCENTS
             </h3>
 
             <p className="mt-4 text-sm text-white/60 leading-relaxed max-w-xs mx-auto md:mx-0">
@@ -51,16 +68,39 @@ function Footer() {
             </h4>
 
             <div className="flex justify-center md:justify-end items-center gap-6 text-white/70">
-              <a href="#" className="hover:text-white transition">
+              <a
+                href="https://www.instagram.com/stridescents.pk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
                 <Instagram size={24} />
               </a>
-              <a href="#" className="hover:text-white transition">
+
+              <a
+                href="https://www.facebook.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
                 <Facebook size={24} />
               </a>
-              <a href="#" className="hover:text-white transition">
+
+              <a
+                href="https://twitter.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
                 <Twitter size={24} />
               </a>
-              <a href="#" className="hover:text-white transition">
+
+              <a
+                href="https://www.linkedin.com/in/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
                 <Linkedin size={24} />
               </a>
             </div>

@@ -6,6 +6,8 @@ import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
+import Products from "./pages/products";
+import ProductDetail from "./pages/productdetail";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -35,6 +37,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
 
         <Footer />
