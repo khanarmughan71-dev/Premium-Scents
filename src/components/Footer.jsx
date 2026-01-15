@@ -2,7 +2,7 @@ import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="bg-black/95 text-white">
+    <footer className="bg-neutral-900/50 text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-10">
         {/* TOP CONTENT */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-20 items-start">
@@ -45,7 +45,7 @@ function Footer() {
 
           {/* CENTER: Navigation */}
           <div className="flex justify-center align-center">
-            <div className="grid grid-cols-2 gap-x-12 gap-y-2 text-md text-center md:text-left">
+            <div className="grid grid-cols-2 gap-x-12 text-lg gap-y-2 text-md text-center md:text-left">
               {["Home", "Shop", "About", "Contact", "Privacy", "Terms"].map(
                 (item) => (
                   <a

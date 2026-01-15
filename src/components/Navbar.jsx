@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,7 +55,13 @@ function Navbar() {
           {["Home", "Shop", "About", "Contact"].map((item) => (
             <Link
               key={item}
-              to={item === "Home" ? "/" : item === "Shop" ? "/products" : `/${item.toLowerCase()}`}
+              to={
+                item === "Home"
+                  ? "/"
+                  : item === "Shop"
+                  ? "/products"
+                  : `/${item.toLowerCase()}`
+              }
               className="px-5 py-2 rounded-full text-white/90 transition-all duration-300
                          hover:text-white hover:bg-white/10 hover:backdrop-blur-md"
             >
@@ -62,59 +70,78 @@ function Navbar() {
           ))}
         </div>
 
-        {/* RIGHT: Cart + Mobile Toggle */}
+        {/* RIGHT: WhatsApp + Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <Link
-            to="/Cart"
-            className="relative border border-neutral-700 px-4 py-2 rounded-full text-sm hover:bg-white hover:text-black transition"
+          {/* WhatsApp Icon */}
+          <a
+            href="https://wa.me/9203223661499"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            className="
+    w-10 h-10 rounded-full
+    border border-neutral-700
+    flex items-center justify-center
+    text-green-500
+    hover:bg-green-500 hover:text-black hover:border-green-500
+    transition
+  "
           >
-            Cart
-          </Link>
+            <FaWhatsapp size={20} />
+          </a>
 
           {/* Hamburger */}
           <button
-            onClick={() => setMenuOpen((prev) => !prev)}
-            className="md:hidden flex flex-col justify-center gap-1"
-            aria-label="Toggle menu"
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition"
+            aria-label="Open menu"
           >
-            <span className="w-6 h-0.5 bg-white"></span>
-            <span className="w-6 h-0.5 bg-white"></span>
-            <span className="w-6 h-0.5 bg-white"></span>
+            <Menu size={22} />
           </button>
         </div>
       </div>
 
-      {/* MOBILE DRAWER */}
+      {/* MOBILE DRAWER – MODERN */}
       <div
-        className={`fixed inset-0 z-100 md:hidden ${
+        className={`fixed inset-0 z-50 md:hidden ${
           menuOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
         {/* Overlay */}
         <div
           onClick={() => setMenuOpen(false)}
-          className={`absolute inset-0 bg-black/70 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-300 ${
             menuOpen ? "opacity-100" : "opacity-0"
           }`}
-        ></div>
+        />
 
         {/* Drawer Panel */}
         <div
-          className={`absolute right-0 top-0 h-full w-72 bg-black border-l border-neutral-800
-            transform transition-transform duration-300 ease-in-out
-            ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+          className={`
+      absolute right-0 top-0 h-full
+      w-[100%] max-w-sm
+      bg-black
+      border-l border-neutral-800
+      transform transition-transform duration-300 ease-in-out
+      ${menuOpen ? "translate-x-0" : "translate-x-full"}
+    `}
         >
-          {/* Close Button */}
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="absolute top-6 right-6 text-white text-xl"
-            aria-label="Close menu"
-          >
-            ✕
-          </button>
+          {/* Header */}
+          <div className="flex items-center justify-between px-6 py-6 border-b border-neutral-800">
+            <span className="text-sm tracking-[0.3em] uppercase text-white/70">
+              Menu
+            </span>
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="p-2 rounded-full hover:bg-white/10 transition"
+              aria-label="Close menu"
+            >
+              <X size={22} />
+            </button>
+          </div>
 
-          {/* Drawer Links */}
-          <div className="flex flex-col pt-28 px-8 space-y-6 text-sm uppercase tracking-widest">
+          {/* Navigation */}
+          <nav className="flex flex-col px-8 pt-6 space-y-4 text-base font-medium">
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
@@ -124,7 +151,7 @@ function Navbar() {
             </Link>
 
             <Link
-              to="/shop"
+              to="/products"
               onClick={() => setMenuOpen(false)}
               className="hover:text-white/80 transition"
             >
@@ -146,6 +173,24 @@ function Navbar() {
             >
               Contact
             </Link>
+          </nav>
+
+          {/* WhatsApp CTA – Proper Button */}
+          <div className="mt-auto px-8 pt-6">
+            <a
+              href="https://wa.me/9203223661499"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+          flex items-center justify-center gap-3
+          w-full py-3 rounded-full
+          bg-green-500 text-black font-medium
+          hover:bg-green-400 transition
+        "
+            >
+              <FaWhatsapp size={20} />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>
