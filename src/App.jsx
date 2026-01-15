@@ -13,7 +13,8 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [cartOpen, setCartOpen] = useState(false); // ✅ REQUIRED
+  const [cartOpen, setCartOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -28,14 +29,17 @@ function App() {
       {/* FULL PAGE LOADER */}
       {loading && <Loader />}
 
-      {/* WEBSITE CONTENT */}
-      <div
-        className={`transition-opacity duration-1000 ${
-          loading ? "opacity-0" : "opacity-100"
-        }`}
-      >
-        <Navbar />
+      {/* WEBSITE CONTENT (BLUR WHEN MENU OPEN) */}
 
+      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+      <div
+        className={`
+          transition-all duration-300
+          ${loading ? "opacity-0" : "opacity-100"}
+          ${menuOpen ? "blur-md scale-[0.98]" : "blur-0 scale-100"}
+        `}
+      >
         <ScrollToTop />
 
         {/* ROUTES */}
@@ -46,14 +50,11 @@ function App() {
         </Routes>
 
         <Footer />
-
-        {/* FLOATING CART + DRAWER */}
-        <FloatingCart onClick={() => setCartOpen(true)} />
-        <CartDrawer
-          isOpen={cartOpen}
-          onClose={() => setCartOpen(false)}
-        />
       </div>
+
+      {/* FLOATING CART + DRAWER (OUTSIDE BLUR) */}
+      <FloatingCart onClick={() => setCartOpen(true)} />
+      <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
     </>
   );
 }

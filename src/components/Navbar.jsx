@@ -1,18 +1,13 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Menu, X } from "lucide-react";
 
-function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+function Navbar({ menuOpen, setMenuOpen }) {
 
   // Lock body scroll when drawer is open (premium UX)
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
   return (
