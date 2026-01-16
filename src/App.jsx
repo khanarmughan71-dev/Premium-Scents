@@ -9,6 +9,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import FloatingCart from "./components/FloatingCart";
 import CartDrawer from "./components/CartDrawer";
+import Checkout from "./pages/Checkout";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
         <Footer />
