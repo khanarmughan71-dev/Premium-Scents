@@ -40,6 +40,11 @@ export function CartProvider({ children }) {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
+  // ✅ CLEAR ENTIRE CART (REQUIRED FOR CHECKOUT)
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -47,6 +52,7 @@ export function CartProvider({ children }) {
         addToCart,
         decreaseQuantity,
         removeFromCart,
+        clearCart, // ✅ EXPORT IT
       }}
     >
       {children}
