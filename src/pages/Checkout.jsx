@@ -165,7 +165,7 @@ function Checkout() {
             to="/"
             className="mt-6 block w-full text-center py-3 rounded-full bg-white text-black font-medium hover:bg-neutral-200 transition"
           >
-            Continue Shopping
+            Back to Menu
           </Link>
         </div>
       </section>

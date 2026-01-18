@@ -184,7 +184,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
         "
             >
               <FaWhatsapp size={20} />
-              Chat on WhatsApp
+              Chat on WhatsApp.
             </a>
           </div>
         </div>
