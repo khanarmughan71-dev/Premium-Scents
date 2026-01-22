@@ -66,7 +66,6 @@ function Home() {
       <section className="bg-black text-white py-24">
         <Reveal direction="right">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
-            {/* Section Header */}
             <div className="mb-16">
               <h2 className="text-3xl md:text-4xl font-bold tracking-wide">
                 Featured Fragrances
@@ -77,33 +76,54 @@ function Home() {
               </p>
             </div>
 
-            {/* Fragrance Grid */}
-            {/* Fragrance Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {products.slice(0, 3).map((product) => (
-                <Link
-                  key={product.id}
-                  to={`/product/${product.id}`}
-                  className="group relative h-90 md:h-105 rounded-2xl overflow-hidden bg-neutral-900"
-                >
-                  <img
-                    src={product.image2}
-                    alt={product.name}
-                    className="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
+              {products.slice(0, 3).map((product) => {
+                const discountPercent = Math.round(
+                  ((product.originalPrice - product.discountedPrice) /
+                    product.originalPrice) *
+                    100,
+                );
 
-                  <div className="absolute inset-0 bg-black/60"></div>
+                return (
+                  <Link
+                    key={product.id}
+                    to={`/product/${product.id}`}
+                    className="group relative h-96 md:h-[26rem] rounded-2xl overflow-hidden bg-neutral-900"
+                  >
+                    <img
+                      src={product.image2}
+                      alt={product.name}
+                      className="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
 
-                  <div className="relative z-10 h-full flex flex-col justify-end p-8 text-center">
-                    <h3 className="text-lg font-medium tracking-wide">
-                      {product.name}
-                    </h3>
-                    <p className="mt-2 text-sm text-white/70">
-                      {product.description}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+                    <div className="absolute inset-0 bg-black/60"></div>
+
+                    <div className="absolute top-4 left-4 z-20 bg-red-600 text-white text-xs px-3 py-1 rounded-full tracking-wide">
+                      {discountPercent}% OFF
+                    </div>
+
+                    <div className="relative z-10 h-full flex flex-col justify-end p-8 text-center">
+                      <h3 className="text-lg font-medium tracking-wide">
+                        {product.name}
+                      </h3>
+
+                      <p className="mt-2 text-sm text-white/70">
+                        {product.description}
+                      </p>
+
+                      <div className="mt-4 flex items-center justify-center gap-3">
+                        <span className="text-sm text-white/40 line-through">
+                          Rs. {product.originalPrice}
+                        </span>
+
+                        <span className="text-lg font-semibold text-green-400">
+                          Rs. {product.discountedPrice}
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="mt-14 flex justify-center">
